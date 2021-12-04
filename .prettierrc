@@ -1,0 +1,11 @@
+{
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "printWidth": 100,
+  "trailingComma": "es5",
+  "semi": true,
+  "singleQuote": false,
+  "importOrder": ["^@/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

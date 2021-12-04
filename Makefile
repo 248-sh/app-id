@@ -1,0 +1,2 @@
+tag:
+	yarn standard-version
