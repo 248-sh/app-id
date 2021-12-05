@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.6](https://github.com/248-sh/app-id/compare/v0.1.5...v0.1.6) (2021-12-05)
 
-
 ### Bug Fixes
 
-* use single quotes in actions ([51c2c47](https://github.com/248-sh/app-id/commit/51c2c47dade6f39258e748af2a22fcbe8ed908d5))
+- use single quotes in actions ([51c2c47](https://github.com/248-sh/app-id/commit/51c2c47dade6f39258e748af2a22fcbe8ed908d5))
 
 ### [0.1.5](https://github.com/248-sh/app-id/compare/v0.1.4...v0.1.5) (2021-12-05)
 
@@ -15,16 +14,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.3](https://github.com/248-sh/app-id/compare/v0.1.2...v0.1.3) (2021-12-04)
 
-
 ### Bug Fixes
 
-* use different base images in `Dockerfile` ([06e9207](https://github.com/248-sh/app-id/commit/06e92071521718c15ae8b57283c65572f2a8c12f))
+- use different base images in `Dockerfile` ([06e9207](https://github.com/248-sh/app-id/commit/06e92071521718c15ae8b57283c65572f2a8c12f))
 
 ### [0.1.2](https://github.com/248-sh/app-id/compare/v0.1.1...v0.1.2) (2021-12-04)
 
-
 ### Bug Fixes
 
-* rename `.github/workflow/push.yml` to `.github/workflows/publish.yml` ([727de28](https://github.com/248-sh/app-id/commit/727de2845fe51999d8ac4dcd45445681ea2cf0a6))
+- rename `.github/workflow/push.yml` to `.github/workflows/publish.yml` ([727de28](https://github.com/248-sh/app-id/commit/727de2845fe51999d8ac4dcd45445681ea2cf0a6))
 
 ### 0.1.1 (2021-12-04)

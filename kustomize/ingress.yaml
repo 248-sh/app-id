@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-id
+  annotations:
+    cert-manager.io/cluster-issuer: cluster-issuer
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+    - host: id.248.sh
+      http:
+        paths:
+          - backend:
+              service:
+                name: app-id
+                port:
+                  name: http
+            path: /
+            pathType: Prefix
+  # tls:
+  #   - hosts:
+  #       - id.248.sh
+  #     secretName: app-id-tls

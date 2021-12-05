@@ -4,10 +4,14 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
+# on:
+#   release:
+#     types:
+#       - created
 on:
-  release:
-    types:
-      - created
+  push:
+    tags:
+      - "*"
 
 jobs:
   build-and-push-image:
