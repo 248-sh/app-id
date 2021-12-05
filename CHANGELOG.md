@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/248-sh/app-id/compare/v0.1.5...v0.1.6) (2021-12-05)
+
+
+### Bug Fixes
+
+* use single quotes in actions ([51c2c47](https://github.com/248-sh/app-id/commit/51c2c47dade6f39258e748af2a22fcbe8ed908d5))
+
 ### [0.1.5](https://github.com/248-sh/app-id/compare/v0.1.4...v0.1.5) (2021-12-05)
 
 ### [0.1.4](https://github.com/248-sh/app-id/compare/v0.1.3...v0.1.4) (2021-12-04)
