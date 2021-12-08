@@ -14,6 +14,8 @@ spec:
           image: <app-id-image>
           imagePullPolicy: IfNotPresent
           env:
+            - name: NEXTAUTH_URL
+              value: https://id.248.sh
             - name: GITHUB_ID
               valueFrom:
                 secretKeyRef:
