@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/248-sh/app-id/compare/v0.1.11...v0.1.12) (2021-12-08)
+
+
+### Bug Fixes
+
+* fix github scope, again ([a47c047](https://github.com/248-sh/app-id/commit/a47c047f7947591c1d1a5374b08809d540a94a79))
+
 ### [0.1.11](https://github.com/248-sh/app-id/compare/v0.1.10...v0.1.11) (2021-12-08)
 
 ### [0.1.10](https://github.com/248-sh/app-id/compare/v0.1.9...v0.1.10) (2021-12-08)
