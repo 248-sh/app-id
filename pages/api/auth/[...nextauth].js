@@ -33,12 +33,15 @@ export default NextAuth({
     //   clientId: process.env.FACEBOOK_ID,
     //   clientSecret: process.env.FACEBOOK_SECRET,
     // }),
-    GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-      // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
-      scope: "read:user,read:org",
-    }),
+    {
+      ...GithubProvider({
+        clientId: process.env.GITHUB_ID,
+        clientSecret: process.env.GITHUB_SECRET,
+        // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
+        scope: "read:user,read:org", // appears to be ignored
+      }),
+      authorization: "https://github.com/login/oauth/authorize?scope=read:user+user:email+read:org",
+    },
     // GoogleProvider({
     //   clientId: process.env.GOOGLE_ID,
     //   clientSecret: process.env.GOOGLE_SECRET,
