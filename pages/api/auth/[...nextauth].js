@@ -7,6 +7,13 @@ import GithubProvider from "next-auth/providers/github";
 // import AppleProvider from "next-auth/providers/apple"
 // import EmailProvider from "next-auth/providers/email"
 
+const githubProvider = GithubProvider({
+  clientId: process.env.GITHUB_ID,
+  clientSecret: process.env.GITHUB_SECRET,
+  // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
+  scope: "read:user,read:org", // appears to be ignored
+});
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
@@ -34,13 +41,26 @@ export default NextAuth({
     //   clientSecret: process.env.FACEBOOK_SECRET,
     // }),
     {
-      ...GithubProvider({
-        clientId: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
-        // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
-        scope: "read:user,read:org", // appears to be ignored
-      }),
+      ...githubProvider,
       authorization: "https://github.com/login/oauth/authorize?scope=read:user+user:email+read:org",
+      async request(options) {
+        const { client, tokens } = options;
+
+        const profile = await githubProvider.request(options);
+
+        const teams = await (
+          await fetch("https://api.github.com/orgs/248-sh/teams", {
+            headers: { Authorization: `token ${tokens.access_token}` },
+          })
+        ).json();
+
+        console.log("request teams", teams);
+
+        return {
+          ...profile,
+          teams,
+        };
+      },
     },
     // GoogleProvider({
     //   clientId: process.env.GOOGLE_ID,
