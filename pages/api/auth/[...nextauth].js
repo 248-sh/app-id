@@ -43,23 +43,26 @@ export default NextAuth({
     {
       ...githubProvider,
       authorization: "https://github.com/login/oauth/authorize?scope=read:user+user:email+read:org",
-      async request(options) {
-        const { client, tokens } = options;
+      userinfo: {
+        ...githubProvider.userinfo,
+        async request(options) {
+          const { client, tokens } = options;
 
-        const profile = await githubProvider.request(options);
+          const profile = await githubProvider.userinfo.request(options);
 
-        const teams = await (
-          await fetch("https://api.github.com/orgs/248-sh/teams", {
-            headers: { Authorization: `token ${tokens.access_token}` },
-          })
-        ).json();
+          const teams = await (
+            await fetch("https://api.github.com/orgs/248-sh/teams", {
+              headers: { Authorization: `token ${tokens.access_token}` },
+            })
+          ).json();
 
-        console.log("request teams", teams);
+          console.log("request teams", teams);
 
-        return {
-          ...profile,
-          teams,
-        };
+          return {
+            ...profile,
+            teams,
+          };
+        },
       },
     },
     // GoogleProvider({
