@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/248-sh/app-id/compare/v0.1.13...v0.1.14) (2021-12-08)
+
+
+### Features
+
+* fetch teams data from github ([6db5e97](https://github.com/248-sh/app-id/commit/6db5e979280485661ac240fb95618eff2e7f4606))
+
 ### [0.1.13](https://github.com/248-sh/app-id/compare/v0.1.12...v0.1.13) (2021-12-08)
 
 
