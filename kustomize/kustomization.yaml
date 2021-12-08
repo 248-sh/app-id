@@ -8,7 +8,6 @@ resources:
   - ingress.yaml
 commonLabels:
   app.kubernetes.io/name: app-id
-  app.kubernetes.io/version: 0.1.10
 images:
   - name: <app-id-image>
     newName: ghcr.io/248-sh/app-id
