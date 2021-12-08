@@ -37,7 +37,7 @@ export default NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
       // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
-      scope: "read:user",
+      scope: "read:user,read:org",
     }),
     // GoogleProvider({
     //   clientId: process.env.GOOGLE_ID,

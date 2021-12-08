@@ -1,6 +1,6 @@
 name: auto-merge pull requests
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
   dependabot:
