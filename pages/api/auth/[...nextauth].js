@@ -105,10 +105,47 @@ export default NextAuth({
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
-    // async signIn({ user, account, profile, email, credentials }) { return true },
+    async jwt({ account, isNewUser, profile, token, user, ...rest }) {
+      console.log("callbacks jwt account", account);
+      console.log("callbacks jwt isNewUser", isNewUser);
+      console.log("callbacks jwt profile", profile);
+      console.log("callbacks jwt token", token);
+      console.log("callbacks jwt user", user);
+      console.log("callbacks jwt rest", rest);
+
+      if (account?.accessToken) {
+        token.accessToken = account.accessToken;
+      }
+      if (user?.roles) {
+        token.roles = user.roles;
+      }
+
+      return token;
+    },
+    async session({ session, token, user, ...rest }) {
+      console.log("callbacks session session", session);
+      console.log("callbacks session token", token);
+      console.log("callbacks session user", user);
+      console.log("callbacks session rest", rest);
+      if (token?.accessToken) {
+        session.accessToken = token.accessToken;
+      }
+      if (token?.roles) {
+        session.user.roles = token.roles;
+      }
+
+      return session;
+    },
+    async signIn({ account, credentials, email, profile, user, ...rest }) {
+      console.log("callbacks signIn account", account);
+      console.log("callbacks signIn credentials", credentials);
+      console.log("callbacks signIn email", email);
+      console.log("callbacks signIn profile", profile);
+      console.log("callbacks signIn user", user);
+      console.log("callbacks signIn rest", rest);
+      return true;
+    },
     // async redirect({ url, baseUrl }) { return baseUrl },
-    // async session({ session, token, user }) { return session },
-    // async jwt({ token, user, account, profile, isNewUser }) { return token }
   },
 
   // Events are useful for logging
@@ -118,7 +155,7 @@ export default NextAuth({
   // You can set the theme to 'light', 'dark' or use 'auto' to default to the
   // whatever prefers-color-scheme is set to in the browser. Default is 'auto'
   theme: {
-    colorScheme: "light",
+    colorScheme: "auto",
   },
 
   // Enable debug messages in the console if you are having problems
