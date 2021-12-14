@@ -6,6 +6,7 @@ import GithubProvider from "next-auth/providers/github";
 // import Auth0Provider from "next-auth/providers/auth0";
 // import AppleProvider from "next-auth/providers/apple"
 // import EmailProvider from "next-auth/providers/email"
+import { URL } from "url";
 
 const githubProvider = GithubProvider({
   clientId: process.env.GITHUB_ID,
@@ -14,9 +15,27 @@ const githubProvider = GithubProvider({
   scope: "read:user,read:org", // appears to be ignored
 });
 
+const url = new URL(process.env.NEXTAUTH_URL);
+const useSecureCookies = url.protocol === "https:";
+const cookiePrefix = useSecureCookies ? "__Secure-" : "";
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
+  cookies: {
+    sessionToken: {
+      name: `${cookiePrefix}next-auth.session-token`,
+
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: useSecureCookies,
+        // domain: url.hostname === "localhost" ? url.hostname : "." + url.hostname, // add a . in front so that subdomains are included
+        domain: url.hostname === "localhost" ? url.hostname : ".248.sh", // add a . in front so that subdomains are included
+      },
+    },
+  },
   // https://next-auth.js.org/configuration/providers
   providers: [
     /* EmailProvider({
