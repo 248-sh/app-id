@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/248-sh/app-id/compare/v0.1.15...v0.1.16) (2021-12-14)
+
+
+### Bug Fixes
+
+* fix roles ([e079de3](https://github.com/248-sh/app-id/commit/e079de370653b94f7598aeb313dd346fbc522fed))
+
 ### [0.1.15](https://github.com/248-sh/app-id/compare/v0.1.14...v0.1.15) (2021-12-14)
 
 
