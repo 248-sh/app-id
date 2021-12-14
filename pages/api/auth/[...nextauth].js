@@ -61,7 +61,7 @@ export default NextAuth({
           return {
             ...profile,
             teams,
-            roles: teams.map((team) => team.name),
+            roles: Array.isArray(teams) ? teams.map((team) => team.name) : [],
           };
         },
       },
@@ -151,6 +151,9 @@ export default NextAuth({
       if (account?.accessToken) {
         token.accessToken = account.accessToken;
       }
+      if (user?.login) {
+        token.login = user.login;
+      }
       if (user?.roles) {
         token.roles = user.roles;
       }
@@ -165,6 +168,9 @@ export default NextAuth({
       if (token?.accessToken) {
         session.accessToken = token.accessToken;
       }
+      if (token?.login) {
+        session.user.login = token.login;
+      }
       if (token?.roles) {
         session.user.roles = token.roles;
       }
@@ -178,7 +184,11 @@ export default NextAuth({
       console.log("callbacks signIn profile", profile);
       console.log("callbacks signIn user", user);
       console.log("callbacks signIn rest", rest);
-      return true;
+
+      if (!profile) {
+        return false;
+      }
+      return profile.roles.length > 0;
     },
     // async redirect({ url, baseUrl }) { return baseUrl },
   },
