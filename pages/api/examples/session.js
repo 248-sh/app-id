@@ -2,6 +2,10 @@
 import { getSession } from "next-auth/react";
 
 export default async (req, res) => {
+  console.log("session query", req.query);
+  console.log("session cookies", req.cookies);
+  console.log("session headers", req.headers);
+  console.log("session body", req.body);
   const session = await getSession({ req });
   console.log("session session", session);
   res.send(JSON.stringify(session, null, 2));
