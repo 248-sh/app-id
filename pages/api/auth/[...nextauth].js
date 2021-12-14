@@ -61,8 +61,17 @@ export default NextAuth({
           return {
             ...profile,
             teams,
+            roles: teams.map((team) => team.name),
           };
         },
+      },
+      profile(profile) {
+        console.log("profile profile", profile);
+
+        return {
+          ...profile,
+          ...githubProvider.profile(profile),
+        };
       },
     },
     // GoogleProvider({

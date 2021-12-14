@@ -16,6 +16,8 @@ spec:
           env:
             - name: NEXTAUTH_URL
               value: https://id.248.sh
+            - name: NEXTAUTH_URL_INTERNAL
+              value: http://app-id.app-id.cluster.local
             - name: GITHUB_ID
               valueFrom:
                 secretKeyRef:
