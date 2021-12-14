@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/248-sh/app-id/compare/v0.1.14...v0.1.15) (2021-12-14)
+
+
+### Features
+
+* work on ui ([ce1634b](https://github.com/248-sh/app-id/commit/ce1634b8035a8f808c9f49686a21667af72a175f))
+
 ### [0.1.14](https://github.com/248-sh/app-id/compare/v0.1.13...v0.1.14) (2021-12-08)
 
 
