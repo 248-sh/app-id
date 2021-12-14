@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.18](https://github.com/248-sh/app-id/compare/v0.1.17...v0.1.18) (2021-12-14)
+
+
+### Features
+
+* modify cookie to include subdomains ([e8a1e6c](https://github.com/248-sh/app-id/commit/e8a1e6c658fb068f71dc87198a9c5453ce14965e))
+
 ### [0.1.17](https://github.com/248-sh/app-id/compare/v0.1.16...v0.1.17) (2021-12-14)
 
 ### [0.1.16](https://github.com/248-sh/app-id/compare/v0.1.15...v0.1.16) (2021-12-14)
