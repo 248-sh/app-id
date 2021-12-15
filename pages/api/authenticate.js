@@ -15,7 +15,7 @@ export default async (req, res) => {
   }
 
   if (session.user.roles.length === 0) {
-    return res.status(400).end();
+    return res.status(401).end();
   }
 
   return res.status(200).end();
