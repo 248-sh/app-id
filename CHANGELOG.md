@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/248-sh/app-id/compare/v0.1.19...v0.1.20) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix api responses ([07c9e55](https://github.com/248-sh/app-id/commit/07c9e5506c485de556fa5457206fe94d80d18742))
+
 ### [0.1.19](https://github.com/248-sh/app-id/compare/v0.1.18...v0.1.19) (2021-12-15)
 
 
