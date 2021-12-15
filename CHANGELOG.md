@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.19](https://github.com/248-sh/app-id/compare/v0.1.18...v0.1.19) (2021-12-15)
+
+
+### Features
+
+* add custom error pages and authz api endpoints ([c9b0bbc](https://github.com/248-sh/app-id/commit/c9b0bbc39f9942c300fca830ef713c001974650d))
+
 ### [0.1.18](https://github.com/248-sh/app-id/compare/v0.1.17...v0.1.18) (2021-12-14)
 
 
