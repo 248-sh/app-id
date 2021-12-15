@@ -11,8 +11,8 @@ export default async (req, res) => {
   console.log("authorize session", session);
 
   if (session === null || session.user.roles.length === 0) {
-    return res.sendStatus(400);
+    return res.status(400).end();
   }
 
-  return res.sendStatus(200);
+  return res.status(200).end();
 };
