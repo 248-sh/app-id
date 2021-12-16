@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from "next-auth/react";
+import { getSession, signIn, signOut, useSession } from "next-auth/react";
 
 const Authenticated = ({ session }) => (
   <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
@@ -91,5 +91,11 @@ const Profile = () => {
 
   return <Unauthenticated />;
 };
+
+export const getServerSideProps = async (context) => ({
+  props: {
+    session: await getSession(context),
+  },
+});
 
 export default Profile;
