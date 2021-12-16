@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/248-sh/app-id/compare/v0.1.22...v0.1.23) (2021-12-16)
+
+
+### Features
+
+* add favicons ([c6088e7](https://github.com/248-sh/app-id/commit/c6088e78e0c7093004b10a172df35adbd64f0304))
+* work on redirects ([30dcbbb](https://github.com/248-sh/app-id/commit/30dcbbbc3bd7e2ae8d9a0812a5a41833b47b909e))
+
 ### [0.1.22](https://github.com/248-sh/app-id/compare/v0.1.21...v0.1.22) (2021-12-15)
 
 
