@@ -18,6 +18,7 @@ const githubProvider = GithubProvider({
 const url = new URL(process.env.NEXTAUTH_URL);
 const useSecureCookies = url.protocol === "https:";
 const cookiePrefix = useSecureCookies ? "__Secure-" : "";
+const redirectUrlRegExp = new RegExp(process.env.REDIRECT_URL_REGEXP);
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -207,9 +208,20 @@ export default NextAuth({
       if (!profile) {
         return false;
       }
+
       return profile.roles.length > 0;
     },
-    // async redirect({ url, baseUrl }) { return baseUrl },
+    async redirect({ url, baseUrl }) {
+      console.log("redirect baseUrl", baseUrl);
+      console.log("redirect url", url);
+      console.log("redirect redirectUrlRegExp", redirectUrlRegExp.test(url));
+
+      if (redirectUrlRegExp.test(url)) {
+        return url;
+      }
+
+      return baseUrl;
+    },
   },
 
   // Events are useful for logging

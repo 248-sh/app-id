@@ -11,6 +11,10 @@ export default async (req, res) => {
   console.log("authenticate session", session);
 
   if (session === null) {
+    if ("uri" in req.query) {
+      return res.redirect(`/?next=${req.query.uri}`);
+    }
+
     return res.redirect("/");
   }
 

@@ -10,10 +10,7 @@ const NotFound = () => (
             </h1>
           </div>
           <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-            <a
-              href={process.env.NEXTAUTH_URL}
-              className="text-base font-medium text-red-600 hover:text-red-500"
-            >
+            <a href="/" className="text-base font-medium text-red-600 hover:text-red-500">
               <span aria-hidden="true">&larr; </span>go back
             </a>
           </div>
