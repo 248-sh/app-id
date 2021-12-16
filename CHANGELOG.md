@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/248-sh/app-id/compare/v0.1.24...v0.1.25) (2021-12-16)
+
+
+### Bug Fixes
+
+* fix redirect ([d7e2ef3](https://github.com/248-sh/app-id/commit/d7e2ef36ca529d01a8a45537c9c8252a31c1804d))
+
 ### [0.1.24](https://github.com/248-sh/app-id/compare/v0.1.23...v0.1.24) (2021-12-16)
 
 
