@@ -92,10 +92,27 @@ const Profile = () => {
   return <Unauthenticated />;
 };
 
-export const getServerSideProps = async (context) => ({
-  props: {
-    session: await getSession(context),
-  },
-});
+// const redirectUrlRegExp = new RegExp(process.env.REDIRECT_URL_REGEXP);
+const redirectUrlRegExp = /^https:\/\/(.+\.)?248\.sh/;
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+  const { next } = context.query;
+
+  if (session !== null && next && redirectUrlRegExp.test(next)) {
+    return {
+      redirect: {
+        destination: next,
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+    },
+  };
+};
 
 export default Profile;

@@ -212,21 +212,21 @@ export default NextAuth({
 
       return profile.roles.length > 0;
     },
-    async redirect({ url, baseUrl }) {
-      console.log("redirect baseUrl", baseUrl);
-      console.log("redirect url", url);
-      console.log("redirect redirectUrlRegExp", redirectUrlRegExp.test(url));
+    // async redirect({ url, baseUrl }) {
+    //   console.log("redirect baseUrl", baseUrl);
+    //   console.log("redirect url", url);
+    //   console.log("redirect redirectUrlRegExp", redirectUrlRegExp.test(url));
 
-      if (redirectUrlRegExp.test(url)) {
-        const parsedUrl = new URL(url);
+    //   if (redirectUrlRegExp.test(url)) {
+    //     const parsedUrl = new URL(url);
 
-        console.log(parsedUrl.searchParams);
+    //     console.log(parsedUrl.searchParams);
 
-        return parsedUrl.searchParams.next;
-      }
+    //     return parsedUrl.searchParams.next;
+    //   }
 
-      return baseUrl;
-    },
+    //   return baseUrl;
+    // },
   },
 
   // Events are useful for logging
