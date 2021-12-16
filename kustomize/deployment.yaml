@@ -14,8 +14,8 @@ spec:
           image: <app-id-image>
           imagePullPolicy: IfNotPresent
           env:
-            - name: REDIRECT_URL_REGEXP
-              value: "^https:\\/\\/(.+\\.)?248\\.sh"
+            # - name: REDIRECT_URL_REGEXP
+            #   value: "^https:\\/\\/(.+\\.)?248\\.sh"
             - name: NEXTAUTH_URL
               value: https://id.248.sh
             # - name: NEXTAUTH_URL_INTERNAL
@@ -49,10 +49,10 @@ spec:
               port: http
           resources:
             requests:
-              cpu: 100m
+              cpu: 50m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 100m
               memory: 128Mi
       imagePullSecrets:
         - name: from-terraform-ghcr-auth
