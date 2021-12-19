@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/248-sh/app-id/compare/v0.1.26...v0.1.27) (2021-12-19)
+
+
+### Features
+
+* bind roles to url patterns ([36f355a](https://github.com/248-sh/app-id/commit/36f355ae5283989ad51be0986d039ff0311f8553))
+
 ### [0.1.26](https://github.com/248-sh/app-id/compare/v0.1.25...v0.1.26) (2021-12-19)
 
 ### [0.1.25](https://github.com/248-sh/app-id/compare/v0.1.24...v0.1.25) (2021-12-16)
