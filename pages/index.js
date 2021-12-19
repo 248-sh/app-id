@@ -1,4 +1,5 @@
 import { getSession, signIn, signOut, useSession } from "next-auth/react";
+import { URLPattern } from "urlpattern-polyfill";
 
 const Authenticated = ({ session }) => (
   <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
@@ -92,14 +93,26 @@ const Profile = () => {
   return <Unauthenticated />;
 };
 
-// const redirectUrlRegExp = new RegExp(process.env.REDIRECT_URL_REGEXP);
-const redirectUrlRegExp = /^https:\/\/(.+\.)?248\.sh/;
+const patterns = process.env.ACCEPTS_REQUESTS_FROM || {};
+const accepts = Object.keys(patterns).reduce(
+  (memo, key) => ({
+    ...memo,
+    [key]: new URLPattern(patterns[key]),
+  }),
+  {}
+);
+
+console.log("ACCEPTS_REQUESTS_FROM", patterns);
 
 export const getServerSideProps = async (context) => {
   const session = await getSession(context);
   const { next } = context.query;
 
-  if (session !== null && next && redirectUrlRegExp.test(next)) {
+  if (
+    session !== null &&
+    next &&
+    session.user.roles.find((role) => role in accepts && accepts[role].test(next))
+  ) {
     return {
       redirect: {
         destination: next,

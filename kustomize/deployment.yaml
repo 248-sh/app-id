@@ -14,8 +14,9 @@ spec:
           image: <app-id-image>
           imagePullPolicy: IfNotPresent
           env:
-            # - name: REDIRECT_URL_REGEXP
-            #   value: "^https:\\/\\/(.+\\.)?248\\.sh"
+            - name: ACCEPTS_REQUESTS_FROM
+              value:
+                argocd: https://argocd.248.sh/*
             - name: NEXTAUTH_URL
               value: https://id.248.sh
             # - name: NEXTAUTH_URL_INTERNAL

@@ -42,6 +42,9 @@ spec:
     spec:
       containers:
       - env:
+        - name: ACCEPTS_REQUESTS_FROM
+          value:
+            argocd: https://argocd.248.sh/*
         - name: NEXTAUTH_URL
           value: https://id.248.sh
         - name: GITHUB_ID
@@ -59,7 +62,7 @@ spec:
             secretKeyRef:
               key: secret
               name: from-terraform
-        image: ghcr.io/248-sh/app-id:v0.1.25
+        image: ghcr.io/248-sh/app-id:v0.1.26
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
