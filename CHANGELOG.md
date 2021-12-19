@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/248-sh/app-id/compare/v0.1.27...v0.1.28) (2021-12-19)
+
+
+### Bug Fixes
+
+* parse ACCEPTS_REQUESTS_FROM env var ([96b186e](https://github.com/248-sh/app-id/commit/96b186ee6efa28f99602dd2322242843bd631fab))
+
 ### [0.1.27](https://github.com/248-sh/app-id/compare/v0.1.26...v0.1.27) (2021-12-19)
 
 
