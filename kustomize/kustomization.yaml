@@ -11,4 +11,4 @@ commonLabels:
 images:
   - name: <app-id-image>
     newName: ghcr.io/248-sh/app-id
-    newTag: v0.1.25
+    newTag: v0.1.26
