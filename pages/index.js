@@ -1,5 +1,6 @@
 import { getSession, signIn, signOut, useSession } from "next-auth/react";
 import { URLPattern } from "urlpattern-polyfill";
+import YAML from "yaml";
 
 const Authenticated = ({ session }) => (
   <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
@@ -93,7 +94,7 @@ const Profile = () => {
   return <Unauthenticated />;
 };
 
-const patterns = process.env.ACCEPTS_REQUESTS_FROM || {};
+const patterns = YAML.parse(process.env.ACCEPTS_REQUESTS_FROM || "") || {};
 const accepts = Object.keys(patterns).reduce(
   (memo, key) => ({
     ...memo,

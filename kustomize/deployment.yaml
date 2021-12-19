@@ -15,7 +15,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: ACCEPTS_REQUESTS_FROM
-              value:
+              value: |
                 argocd: https://argocd.248.sh/*
             - name: NEXTAUTH_URL
               value: https://id.248.sh

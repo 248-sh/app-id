@@ -62,7 +62,7 @@ spec:
             secretKeyRef:
               key: secret
               name: from-terraform
-        image: ghcr.io/248-sh/app-id:v0.1.26
+        image: ghcr.io/248-sh/app-id:v0.1.27
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
